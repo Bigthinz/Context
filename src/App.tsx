@@ -13,7 +13,7 @@ export default function App() {
   const emailRef = React.useRef<HTMLInputElement>(null)
 
   const passwordRef = React.useRef<HTMLInputElement>(null)
-  const { login } = useContext(AuthContext)
+  const { login, logout } = useContext(AuthContext)
 
   const handleSubmit = (e:any)=>{
     e.preventDefault()
@@ -32,8 +32,8 @@ export default function App() {
 
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <h1>Auth!</h1>
+      
       <div>
         <h1>login</h1>
         <div>
@@ -49,6 +49,7 @@ export default function App() {
             <br/>
             <button>login</button>
           </form>
+          <button onClick={()=> logout()}>logout</button>
         
       
       </div>
